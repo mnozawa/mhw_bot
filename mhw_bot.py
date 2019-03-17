@@ -6,6 +6,7 @@ from get_list import *
 from use_weapon import *
 from get_history import *
 from reset_history import *
+from get_party import *
 
 config = configparser.ConfigParser()
 config.read('conf.ini')
@@ -41,6 +42,8 @@ async def on_message(message):
                 res = get_history(message)
             elif command == "reset":
                 res = reset_history(message)
+            elif command == "party":
+                res = get_party(message)
             else:
                 res = get_weapon(message)
             m = message.author.mention + "\n"
