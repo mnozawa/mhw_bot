@@ -7,6 +7,7 @@ from use_weapon import *
 from get_history import *
 from reset_history import *
 from get_party import *
+from entry_hunter import *
 
 config = configparser.ConfigParser()
 config.read('conf.ini')
@@ -44,6 +45,10 @@ async def on_message(message):
                 res = reset_history(message)
             elif command == "party":
                 res = get_party(message)
+            elif command == "entry":
+                res = entry_hunter(message, True)
+            elif command == "disentry":
+                res = entry_hunter(message, False)
             else:
                 res = get_weapon(message)
             m = message.author.mention + "\n"
