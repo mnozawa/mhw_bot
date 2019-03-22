@@ -8,6 +8,8 @@ from get_history import *
 from reset_history import *
 from get_party import *
 from entry_hunter import *
+from get_players import *
+from refresh_party import *
 
 config = configparser.ConfigParser()
 config.read('conf.ini')
@@ -49,6 +51,10 @@ async def on_message(message):
                 res = entry_hunter(message, True)
             elif command == "disentry":
                 res = entry_hunter(message, False)
+            elif command == "players":
+                res = get_players(message)
+            elif command == "refresh":
+                res = refresh_party(message)
             else:
                 res = get_weapon(message)
             m = message.author.mention + "\n"
