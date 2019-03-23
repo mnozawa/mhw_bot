@@ -52,9 +52,9 @@ async def on_message(message):
             elif command == "disentry":
                 res = entry_hunter(message, False)
             elif command == "players":
-                res = get_players(message)
+                res = get_players()
             elif command == "refresh":
-                res = refresh_party(message)
+                res = refresh_party()
             else:
                 res = get_weapon(message)
             m = message.author.mention + "\n"

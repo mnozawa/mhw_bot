@@ -17,7 +17,7 @@ def refresh_party():
             "userName": player
         }
         requests.delete(ent_url, data=json.dumps(request_dict), headers={'Content-Type': 'application/json'})
-    res = "パーティを解散します"
+    res = "今日の狩りはここまでだニャ(エントリーを取り消しました)"
     return res
 
 if __name__ == '__main__':
